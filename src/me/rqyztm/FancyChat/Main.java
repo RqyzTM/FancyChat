@@ -18,7 +18,7 @@ public class Main extends JavaPlugin implements Listener {
 	public void onEnable() {
 		Bukkit.getServer().getConsoleSender().sendMessage("");
 		Bukkit.getServer().getConsoleSender().sendMessage("");
-		Bukkit.getServer().getConsoleSender().sendMessage("§aPlugin enabled!");
+		Bukkit.getServer().getConsoleSender().sendMessage("Â§aPlugin enabled!");
 		Bukkit.getServer().getConsoleSender().sendMessage("");
 		Bukkit.getServer().getConsoleSender().sendMessage("");
 		
@@ -28,7 +28,7 @@ public class Main extends JavaPlugin implements Listener {
 	public void onDisable() {
 		Bukkit.getServer().getConsoleSender().sendMessage("");
 		Bukkit.getServer().getConsoleSender().sendMessage("");
-		Bukkit.getServer().getConsoleSender().sendMessage("§cPlugin disabled!");
+		Bukkit.getServer().getConsoleSender().sendMessage("Â§cPlugin disabled!");
 		Bukkit.getServer().getConsoleSender().sendMessage("");
 		Bukkit.getServer().getConsoleSender().sendMessage("");
 	}
@@ -39,7 +39,7 @@ public class Main extends JavaPlugin implements Listener {
 		
 		e.setCancelled(true);
 		
-		IChatBaseComponent component = ChatSerializer.a("[\"\", {\"text\":\"§f" + p.getName() +"\",\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"§7Player UUID: §b" + p.getUniqueId() + "\"},\"clickEvent\":{\"action\":\"suggest_command\",\"value\":\"/msg " + p.getName() + " \"}}, {\"text\":\" §7> \"}, {\"text\":\"§2" + e.getMessage() +"\"}]");
+		IChatBaseComponent component = ChatSerializer.a("[\"\", {\"text\":\"Â§f" + p.getName() +"\",\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Â§7Player UUID: Â§b" + p.getUniqueId() + "\"},\"clickEvent\":{\"action\":\"suggest_command\",\"value\":\"/msg " + p.getName() + " \"}}, {\"text\":\" Â§7> \"}, {\"text\":\"Â§2" + e.getMessage().replaceAll("\"", "\\" + "\"") + "\"}]");
 		PacketPlayOutChat chat = new PacketPlayOutChat(component);
 		
 		for(Player online : Bukkit.getOnlinePlayers()) {
