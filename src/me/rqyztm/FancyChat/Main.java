@@ -39,7 +39,7 @@ public class Main extends JavaPlugin implements Listener {
 		
 		e.setCancelled(true);
 		
-		IChatBaseComponent component = ChatSerializer.a("[\"\", {\"text\":\"§f" + p.getName() +"\",\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"§7Player UUID: §b" + p.getUniqueId() + "\"},\"clickEvent\":{\"action\":\"suggest_command\",\"value\":\"/msg " + p.getName() + " \"}}, {\"text\":\" §7> \"}, {\"text\":\"§2" + e.getMessage().replaceAll("\"", "\\" + "\"") + "\"}]");
+		IChatBaseComponent component = ChatSerializer.a("[\"\", {\"text\":\"§f" + p.getName() +"\",\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"§7Player UUID: §b" + p.getUniqueId() + "\"},\"clickEvent\":{\"action\":\"suggest_command\",\"value\":\"/msg " + p.getName() + " \"}}, {\"text\":\" §7> \"}, {\"text\":\"§2" + e.getMessage().replaceAll("\"", "´") + "\"}]");
 		PacketPlayOutChat chat = new PacketPlayOutChat(component);
 		
 		for(Player online : Bukkit.getOnlinePlayers()) {
